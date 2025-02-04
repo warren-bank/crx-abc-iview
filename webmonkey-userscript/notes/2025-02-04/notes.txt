@@ -1,0 +1,286 @@
+--------------------------------------------------------------------------------
+
+https://iview.abc.net.au/
+
+--------------------------------------------------------------------------------
+
+test video:
+===========
+
+https://iview.abc.net.au/show/beyond-paradise
+https://iview.abc.net.au/video/ZW4354A001S00
+https://iview.abc.net.au/show/beyond-paradise/series/1/video/ZW4354A001S00
+
+--------------------------------------------------------------------------------
+
+https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/abc.py
+https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/abc.py#L180
+  cheat :)
+
+URL regex (reformatted):
+  /https?:\/\/iview\.abc\.net\.au\/(?:[^\/]+\/)*video\/([^\/?#]+)/
+
+https://iview.abc.net.au/api/programs/${urlRegexMatch[1]}
+
+--------------------------------------------------------------------------------
+
+test video:
+===========
+
+urlRegexMatch[1] == 'ZW4354A001S00'
+
+--------------------------------------------------------------------------------
+
+https://iview.abc.net.au/api/programs/ZW4354A001S00
+
+response without VPN:
+=====================
+{
+  "showID": "317451",
+  "seriesTitle": "Beyond Paradise",
+  "title": "Series 1 Ep 1",
+  "href": "programs\/beyond-paradise\/ZW4354A001S00",
+  "format": "NEW SERIES",
+  "formatBgColour": "#262626",
+  "formatTextColour": "#FFFFFF",
+  "channel": "abc1",
+  "channelTitle": "ABC TV",
+  "pubDate": "2025-01-04 07:00:00",
+  "thumbnail": "https:\/\/cdn.iview.abc.net.au\/thumbs\/i\/zw\/ZW4354A001S00_6772270021b2c_3600.jpg",
+  "episodeHouseNumber": "ZW4354A001S00",
+  "duration": "3484",
+  "rating": "M",
+  "label": "58m",
+  "oztamPublisherID": "5D3923E9-AC02-497C-BD9A-098C5CD3B9D3",
+  "expireDate": "2025-07-03 07:00:00",
+  "seriesHouseNumber": "ZW4354A",
+  "categories": [{
+    "title": "DRAMA",
+    "href": "category\/drama"
+  }],
+  "keywords": "abc1 uk drama crime-drama mystery suspense thriller murder betrayal relationships compelling gritty small-town detective investigation c:popular-drama c:partner binge-worthy",
+  "description": "Back from the Caribbean, DI Humphrey Goodman joins the police force in fiancee Martha's hometown of Shipton Abbott in Devon. Humphrey dives into his first case, which involves an unusual prime suspect: a 17th-century witch.",
+  "related": "related\/ZW4354A001S00",
+  "episodeCount": 6,
+  "availability": "This episode was published 1 month ago.",
+  "classAdvice": "Adult Themes",
+  "captions": true,
+  "share": "http:\/\/iview.abc.net.au\/programs\/beyond-paradise\/ZW4354A001S00",
+  "nextEpisode": {
+    "cuePoint": 3464,
+    "href": "programs\/beyond-paradise\/ZW4354A002S00",
+    "seriesTitle": "Beyond Paradise",
+    "title": "Series 1 Ep 2"
+  },
+  "statusMessage": "Some ABC iview programs are now available outside Australia. For the best international experience, download ABC Australia iview on your local Google Play or App Store."
+}
+
+response with VPN:
+==================
+{
+  "showID": "317451",
+  "seriesTitle": "Beyond Paradise",
+  "title": "Series 1 Ep 1",
+  "href": "programs\/beyond-paradise\/ZW4354A001S00",
+  "format": "NEW SERIES",
+  "formatBgColour": "#262626",
+  "formatTextColour": "#FFFFFF",
+  "channel": "abc1",
+  "channelTitle": "ABC TV",
+  "pubDate": "2025-01-04 07:00:00",
+  "thumbnail": "https:\/\/cdn.iview.abc.net.au\/thumbs\/i\/zw\/ZW4354A001S00_6772270021b2c_3600.jpg",
+  "episodeHouseNumber": "ZW4354A001S00",
+  "duration": "3484",
+  "rating": "M",
+  "label": "58m",
+  "oztamPublisherID": "5D3923E9-AC02-497C-BD9A-098C5CD3B9D3",
+  "expireDate": "2025-07-03 07:00:00",
+  "seriesHouseNumber": "ZW4354A",
+  "categories": [{
+    "title": "DRAMA",
+    "href": "category\/drama"
+  }],
+  "keywords": "abc1 uk drama crime-drama mystery suspense thriller murder betrayal relationships compelling gritty small-town detective investigation c:popular-drama c:partner binge-worthy",
+  "description": "Back from the Caribbean, DI Humphrey Goodman joins the police force in fiancee Martha's hometown of Shipton Abbott in Devon. Humphrey dives into his first case, which involves an unusual prime suspect: a 17th-century witch.",
+  "related": "related\/ZW4354A001S00",
+  "episodeCount": 6,
+  "availability": "This episode was published 1 month ago.",
+  "playlist": [{
+    "type": "preroll",
+    "stream-labels": {
+      "720": "720p",
+      "sd": "SD - HBR",
+      "sd-low": "SD - 650k"
+    },
+    "streams": {
+      "mpegdash": {
+        "720": "https:\/\/iview-vod.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/mpegdash\/720.mpd",
+        "sd": "https:\/\/iview-vod.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/mpegdash\/sd.mpd",
+        "sd-low": "https:\/\/iview-vod.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/mpegdash\/sd-low.mpd",
+        "protected": true
+      },
+      "fairplay": {
+        "720": "https:\/\/iview-vod.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/fairplay\/720.m3u8",
+        "sd": "https:\/\/iview-vod.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/fairplay\/sd.m3u8",
+        "sd-low": "https:\/\/iview-vod.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/fairplay\/sd-low.m3u8",
+        "protected": true
+      },
+      "hls": {
+        "720": "https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/720.m3u8",
+        "sd": "https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd.m3u8",
+        "sd-low": "https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd-low.m3u8",
+        "protected": false
+      },
+      "hls-latest": {
+        "720": "https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/720.m3u8",
+        "sd": "https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd.m3u8",
+        "sd-low": "https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd-low.m3u8",
+        "protected": false
+      }
+    },
+    "hls-plus": "https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd.m3u8",
+    "hls-high": "https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd-low.m3u8",
+    "hls-base": "https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd-low.m3u8",
+    "hls-low": "https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd-low.m3u8",
+    "title": "iview Love Me S2 Stream Now generic preroll"
+  }, {
+    "type": "rating",
+    "stream-labels": {
+      "sd": "SD - HBR",
+      "sd-low": "SD - 650k"
+    },
+    "streams": {
+      "mpegdash": {
+        "sd": "https:\/\/iview-vod.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/mpegdash\/master.mpd",
+        "sd-low": "https:\/\/iview-vod.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/mpegdash\/master.mpd",
+        "protected": true
+      },
+      "fairplay": {
+        "sd": "https:\/\/iview-vod.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/fairplay\/master.m3u8",
+        "sd-low": "https:\/\/iview-vod.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/fairplay\/master.m3u8",
+        "protected": true
+      },
+      "hls": {
+        "sd": "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8",
+        "sd-low": "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8",
+        "protected": false
+      },
+      "hls-latest": {
+        "sd": "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8",
+        "sd-low": "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8",
+        "protected": false
+      }
+    },
+    "hls-plus": "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8",
+    "hls-high": "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8",
+    "hls-base": "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8",
+    "hls-low": "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8",
+    "warning": "Adult Themes"
+  }, {
+    "type": "program",
+    "stream-labels": {
+      "720": "720p",
+      "sd": "SD - HBR",
+      "sd-low": "SD - 650k"
+    },
+    "streams": {
+      "mpegdash": {
+        "720": "https:\/\/iview-vod.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20241229020828\/mpegdash\/720.mpd",
+        "sd": "https:\/\/iview-vod.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20241229020828\/mpegdash\/sd.mpd",
+        "sd-low": "https:\/\/iview-vod.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20241229020828\/mpegdash\/sd-low.mpd",
+        "protected": true
+      },
+      "fairplay": {
+        "720": "https:\/\/iview-vod.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20241229020828\/fairplay\/720.m3u8",
+        "sd": "https:\/\/iview-vod.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20241229020828\/fairplay\/sd.m3u8",
+        "sd-low": "https:\/\/iview-vod.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20241229020828\/fairplay\/sd-low.m3u8",
+        "protected": true
+      },
+      "hls": {
+        "720": "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/v3\/720.m3u8",
+        "sd": "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/v3\/sd.m3u8",
+        "sd-low": "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/v3\/sd-low.m3u8",
+        "protected": false
+      },
+      "hls-latest": {
+        "720": "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/720.m3u8",
+        "sd": "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/sd.m3u8",
+        "sd-low": "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/sd-low.m3u8",
+        "protected": false
+      }
+    },
+    "hls-plus": "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/v3\/sd.m3u8",
+    "hls-high": "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/v3\/sd-low.m3u8",
+    "hls-base": "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/v3\/sd-low.m3u8",
+    "hls-low": "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/v3\/sd-low.m3u8",
+    "captions": {
+      "src-vtt": "https:\/\/cdn.iview.abc.net.au\/cc\/zw\/ZW4354A001S00MA1D1_67761ebba757f.vtt",
+      "live": "0"
+    },
+    "thumbnails": {
+      "lg": {
+        "src-vtt": "https:\/\/cdn.iview.abc.net.au\/vt\/zw4\/ZW4354A001S00MA1D1\/20241229022206\/ZW4354A001S00MA1D1_lg.vtt"
+      }
+    }
+  }],
+  "classAdvice": "Adult Themes",
+  "captions": true,
+  "streams": {
+    "hls-base": ["https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd-low.m3u8", "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8", "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/v3\/sd-low.m3u8"],
+    "hls-high": ["https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd-low.m3u8", "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8", "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/v3\/sd-low.m3u8"],
+    "hls-low": ["https:\/\/iview-vod-hls.akamaized.net\/prod\/mp2\/MP2506H007C00GN1D1\/20250130140228\/hls\/sd-low.m3u8", "https:\/\/iview-vod-hls.akamaized.net\/prod\/cla\/classification_M_2019\/20220208153528\/hls\/master.m3u8", "https:\/\/iview-vod-hls.akamaized.net\/prod\/zw4\/ZW4354A001S00MA1D1\/20250102160708\/hls\/v3\/sd-low.m3u8"]
+  },
+  "share": "http:\/\/iview.abc.net.au\/programs\/beyond-paradise\/ZW4354A001S00",
+  "nextEpisode": {
+    "cuePoint": 3464,
+    "href": "programs\/beyond-paradise\/ZW4354A002S00",
+    "seriesTitle": "Beyond Paradise",
+    "title": "Series 1 Ep 2"
+  }
+}
+
+important values:
+=================
+  episodeHouseNumber = 'ZW4354A001S00'
+
+important notes:
+================
+  * playlist: [] is only available in AU (through VPN)
+  * unprotected HLS:
+      https://iview-vod-hls.akamaized.net/prod/mp2/MP2506H007C00GN1D1/20250130140228/hls/720.m3u8
+    => access denied
+
+--------------------------------------------------------------------------------
+
+https://stackoverflow.com/questions/71746859/how-to-implement-hmacsha256-with-javascipt-using-cryptojs
+https://cryptojs.gitbook.io/docs#hmac
+https://github.com/brix/crypto-js
+https://cdnjs.com/libraries/crypto-js
+https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js
+
+--------------------------------------------------------------------------------
+
+{
+  const house_number = 'ZW4354A001S00'
+  const time_seconds = Math.floor( Date.now() / 1000 )
+
+  const path = `/auth/hls/sign?ts=${time_seconds}&hn=${house_number}&d=android-tablet`
+  const sig  = CryptoJS.HmacSHA256(path, 'android.content.res.Resources').toString(CryptoJS.enc.Hex)
+
+  const url = `https://iview.abc.net.au${path}&sig=${sig}`
+  console.log(url)
+  fetch(url).then(res => res.text()).then(console.log)
+}
+
+https://iview.abc.net.au/auth/hls/sign?ts=1738685397&hn=ZW4354A001S00&d=android-tablet&sig=64837bc9a3141d886706897312444c40e2a941b98e76fd71d83903390372668e
+st=1738685885~exp=1738686785~acl=/*~hmac=dbd489ed85e13df171bcfee310dc9cc966f4a573710aaab15dd187c924f9118a
+
+--------------------------------------------------------------------------------
+
+https://iview-vod-hls.akamaized.net/prod/mp2/MP2506H007C00GN1D1/20250130140228/hls/720.m3u8?hdnea=st=1738685885~exp=1738686785~acl=/*~hmac=dbd489ed85e13df171bcfee310dc9cc966f4a573710aaab15dd187c924f9118a
+  200 OK
+
+https://cdn.iview.abc.net.au/cc/zw/ZW4354A001S00MA1D1_67761ebba757f.vtt
+  200 OK
+
+--------------------------------------------------------------------------------
