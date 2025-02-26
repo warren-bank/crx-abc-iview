@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ABC iview
 // @description  Improve site usability. Watch videos in external player.
-// @version      1.0.0
+// @version      1.0.1
 // @include      /https?:\/\/iview\.abc\.net\.au\/(?:[^\/]+\/)*video\/(?:[^\/?#]+)(?:[#\?\/].*)?$/
 // @icon         https://iview.abc.net.au/img/ABC_iviewicon_76x76.png
 // @require      https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js
@@ -203,7 +203,7 @@ var process_video_data = function(data) {
     // running in Android-WebMonkey: open Intent chooser
 
     if (!data.video_type)
-      data.video_type = determine_video_type(data.video_url)
+      data.video_type = ''
 
     var args = [
       /* action = */ 'android.intent.action.VIEW',
